@@ -70,8 +70,6 @@ INSERT INTO Popularity (idol_id, ranking_year, popularity_rank) VALUES
 (4, 2023, 4);
 
 
-
-
 --Task 1: Write a query to retrieve the most popular male idols , sorted by their popularity rank.
 select * from Idols i join popularity p 
 on i.idol_id = p.idol_id 
