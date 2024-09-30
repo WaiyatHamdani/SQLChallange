@@ -116,5 +116,16 @@ on i.idol_id  = p.idol_id
 where ranking_year = '2023' and popularity_rank = '2'
 order by popularity_rank asc
 
+-- Task 4: Find Groups That Have All Members Born After 2000 Write a query to list groups where all members were born after the year 2000.
+SELECT 
+    name,
+    CASE 
+        WHEN birth_year < 2000 THEN 'Before 2000'
+        ELSE 'After 2000'
+    END AS category
+FROM Idols;
 
-select* from idols 
+
+
+--task 5: Longest Serving Idol Write a query to find the idol who has been active the longest since their debut year. Show their name
+select name ,(extract(year from CURRENT_DATE) - debut_year) as howlong from idols;
